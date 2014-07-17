@@ -1,5 +1,6 @@
 package com.learning.jan_philipp.criminalintent;
 
+import android.app.Activity;
 import android.app.FragmentManager;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -7,15 +8,15 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 
-public class CrimeActivity extends FragmentActivity {
+public class CrimeActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crime);
 
-        android.support.v4.app.FragmentManager fm = getSupportFragmentManager();
-        Fragment fragment = fm.findFragmentById(R.id.fragmentContainer);
+        android.app.FragmentManager fm = getFragmentManager();
+        android.app.Fragment fragment = fm.findFragmentById(R.id.fragmentContainer);
 
         if (fragment==null){
             fragment = new CrimeFragment();
