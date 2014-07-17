@@ -946,6 +946,8 @@ containing a value of this type.
         public static final int beginning=0x7f07000a;
         public static final int checkbox=0x7f07002d;
         public static final int collapseActionView=0x7f070011;
+        public static final int crime_date=0x7f07003e;
+        public static final int crime_solved=0x7f07003f;
         public static final int crime_title=0x7f07003d;
         public static final int default_activity_button=0x7f070028;
         public static final int dialog=0x7f070012;
@@ -1040,7 +1042,10 @@ containing a value of this type.
         public static final int abc_shareactionprovider_share_with=0x7f0a000b;
         public static final int abc_shareactionprovider_share_with_application=0x7f0a000c;
         public static final int app_name=0x7f0a000d;
-        public static final int crime_title_hint=0x7f0a000e;
+        public static final int crime_details_label=0x7f0a000e;
+        public static final int crime_solved_label=0x7f0a000f;
+        public static final int crime_title_hint=0x7f0a0010;
+        public static final int crime_title_label=0x7f0a0011;
     }
     public static final class style {
         /**  Customize your theme here. 
