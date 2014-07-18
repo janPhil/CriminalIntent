@@ -1,4 +1,4 @@
-package com.learning.jan_philipp.criminalintent;
+package com.learning.jan_philipp.criminalIntent;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

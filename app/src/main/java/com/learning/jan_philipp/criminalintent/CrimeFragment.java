@@ -1,7 +1,5 @@
-package com.learning.jan_philipp.criminalintent;
+package com.learning.jan_philipp.criminalIntent;
 
-import android.annotation.TargetApi;
-import android.os.Build;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.text.Editable;
@@ -13,12 +11,8 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
 
 /**
  * Created by janPhil on 16.07.14.

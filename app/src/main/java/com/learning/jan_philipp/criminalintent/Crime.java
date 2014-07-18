@@ -1,6 +1,5 @@
-package com.learning.jan_philipp.criminalintent;
+package com.learning.jan_philipp.criminalIntent;
 
-import java.text.DateFormat;
 import java.util.Date;
 import java.util.UUID;
 
