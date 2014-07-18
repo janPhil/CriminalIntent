@@ -1,7 +1,7 @@
 /**
  * Automatically generated file. DO NOT MODIFY
  */
-package com.learning.jan_philipp.criminalintent;
+package com.learning.jan_philipp.criminalIntent;
 
 public final class BuildConfig {
   public static final boolean DEBUG = Boolean.parseBoolean("true");
