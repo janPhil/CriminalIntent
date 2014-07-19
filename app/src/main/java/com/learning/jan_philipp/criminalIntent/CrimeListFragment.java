@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -18,7 +17,7 @@ import java.util.ArrayList;
  */
 public class CrimeListFragment extends ListFragment {
 
-    static final String TAG = "CrimeListFragement";
+    static final String TAG = "CrimeListFragment";
 
     private ArrayList<Crime> mCrimes;
 
@@ -26,8 +25,8 @@ public class CrimeListFragment extends ListFragment {
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         getActivity().setTitle(R.string.crimes_title);
-        mCrimes = CrimeLab.get(getActivity()).getmCrimes();
 
+        mCrimes = CrimeLab.get(getActivity()).getmCrimes();
         CrimeAdapter adapter = new CrimeAdapter(mCrimes);
         setListAdapter(adapter);
     }
@@ -37,7 +36,8 @@ public class CrimeListFragment extends ListFragment {
         Crime c = ((CrimeAdapter)getListAdapter()).getItem(position);
         Log.d(TAG, c.getTitle().toString());
     }
-        private class CrimeAdapter extends ArrayAdapter<Crime> {
+
+    private class CrimeAdapter extends ArrayAdapter<Crime> {
 
             public CrimeAdapter(ArrayList<Crime> crimes){
                 super(getActivity(), 0, crimes);
@@ -63,5 +63,5 @@ public class CrimeListFragment extends ListFragment {
                 return convertView;
 
             }
-        }
+    }
 }

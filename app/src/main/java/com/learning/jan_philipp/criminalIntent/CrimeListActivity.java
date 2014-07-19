@@ -1,7 +1,6 @@
 package com.learning.jan_philipp.criminalIntent;
 
 import android.app.Fragment;
-
 /**
  * Created by janPhil on 18.07.14.
  */

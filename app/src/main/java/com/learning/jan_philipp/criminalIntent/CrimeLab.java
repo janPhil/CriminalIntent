@@ -38,8 +38,8 @@ public class CrimeLab {
     }
 
     public static CrimeLab get(Context c){
-        if (sCrimeLab ==null){
-            sCrimeLab=new CrimeLab(c.getApplicationContext());
+        if (sCrimeLab == null){
+            sCrimeLab = new CrimeLab(c.getApplicationContext());
         }
         return sCrimeLab;
     }
