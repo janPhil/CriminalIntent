@@ -9,6 +9,7 @@ import android.support.v4.app.FragmentActivity;
  * Created by janPhil on 18.07.14.
  */
 public abstract class SingleFragmentActivity extends FragmentActivity{
+
     protected abstract Fragment createFragment();
 
     @Override

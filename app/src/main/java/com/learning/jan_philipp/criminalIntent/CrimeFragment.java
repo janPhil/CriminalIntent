@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.app.Fragment;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,17 +19,19 @@ import java.util.UUID;
 /**
  * Created by janPhil on 16.07.14.
  */
-public class CrimeFragment extends Fragment {
+public class CrimeFragment extends android.support.v4.app.Fragment {
 
     private Crime mCrime;
     private EditText mTitleField;
     private Button mDateButton;
     private CheckBox mSolvedCheckBox;
+    private static final String TAG = "CrimeFragment";
     public static final String EXTRA_CRIME_ID = "com.learning.jan_philipp.criminalIntent.crime_id";
 
     public static CrimeFragment newInstance(UUID crimeId){
         Bundle args = new Bundle();
         args.putSerializable(EXTRA_CRIME_ID, crimeId);
+        Log.d(TAG, " EXTRA_CRIME_ID is: " + crimeId);
         CrimeFragment fragment = new CrimeFragment();
         fragment.setArguments(args);
 
@@ -44,7 +47,7 @@ public class CrimeFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_crime, container, false);
+        View v = inflater.inflate(R.layout.crime_fragment, container, false);
 
         mTitleField = (EditText) v.findViewById(R.id.crime_title);
         mTitleField.setText(mCrime.getTitle());
