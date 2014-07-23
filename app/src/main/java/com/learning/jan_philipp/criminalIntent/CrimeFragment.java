@@ -1,5 +1,8 @@
 package com.learning.jan_philipp.criminalIntent;
 
+import android.app.Activity;
+import android.app.FragmentManager;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.text.Editable;
@@ -14,6 +17,7 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 
 import java.text.DateFormat;
+import java.util.Date;
 import java.util.UUID;
 
 /**
@@ -27,12 +31,12 @@ public class CrimeFragment extends android.support.v4.app.Fragment {
     private CheckBox mSolvedCheckBox;
     private static final String TAG = "CrimeFragment";
     public static final String EXTRA_CRIME_ID = "com.learning.jan_philipp.criminalIntent.crime_id";
-    public static final String DIALOG_DATE = "date";
+    private static final String DIALOG_DATE = "date";
+    private static final int REQUEST_DATE = 0;
 
     public static CrimeFragment newInstance(UUID crimeId){
         Bundle args = new Bundle();
         args.putSerializable(EXTRA_CRIME_ID, crimeId);
-        Log.d(TAG, " EXTRA_CRIME_ID is: " + crimeId);
         CrimeFragment fragment = new CrimeFragment();
         fragment.setArguments(args);
 
@@ -70,16 +74,16 @@ public class CrimeFragment extends android.support.v4.app.Fragment {
         });
 
         mDateButton = (Button) v.findViewById(R.id.crime_date);
-        mDateButton.setText(DateFormat.getDateInstance().format(mCrime.getmDate()));
         mDateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                android.support.v4.app.FragmentManager fm = getActivity()
-                        .getSupportFragmentManager();
-                DatePickerFragment dialog = new DatePickerFragment();
+                android.support.v4.app.FragmentManager fm = getActivity().getSupportFragmentManager();
+                DatePickerFragment dialog = DatePickerFragment.newInstance(mCrime.getmDate());
+                dialog.setTargetFragment(CrimeFragment.this, REQUEST_DATE);
                 dialog.show(fm, DIALOG_DATE);
             }
         });
+        updateDate();
 
         mSolvedCheckBox = (CheckBox) v.findViewById(R.id.crime_solved);
         mSolvedCheckBox.setChecked(mCrime.ismSolved());
@@ -92,4 +96,19 @@ public class CrimeFragment extends android.support.v4.app.Fragment {
 
         return v;
     }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (resultCode != Activity.RESULT_OK) return;
+        if (requestCode == REQUEST_DATE){
+            Date date = (Date) data.getSerializableExtra(DatePickerFragment.EXTRA_DATE);
+            mCrime.setmDate(date);
+            updateDate();
+        }
+    }
+
+    public void updateDate() {
+        mDateButton.setText(mCrime.getmDate().toString());
+    }
+
 }
