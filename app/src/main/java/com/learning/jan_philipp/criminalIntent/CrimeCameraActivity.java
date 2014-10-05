@@ -1,6 +1,5 @@
 package com.learning.jan_philipp.criminalIntent;
 
-import android.app.Fragment;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
@@ -19,7 +18,7 @@ public class CrimeCameraActivity extends SingleFragmentActivity {
     }
 
     @Override
-    protected Fragment createFragment() {
+    protected CrimeCameraFragment createFragment() {
         return new CrimeCameraFragment();
     }
 }
