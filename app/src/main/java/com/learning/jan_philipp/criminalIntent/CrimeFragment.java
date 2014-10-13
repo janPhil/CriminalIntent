@@ -198,7 +198,7 @@ public class CrimeFragment extends android.support.v4.app.Fragment {
                 Intent i = new Intent(Intent.ACTION_SEND);
                 i.setType("text/plain");
                 i.putExtra(Intent.EXTRA_TEXT, getCrimeReport());
-                i.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.crime_report_suspect));
+                i.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.crime_report_subject));
                 i = Intent.createChooser(i, getString(R.string.send_report));
                 startActivity(i);
             }

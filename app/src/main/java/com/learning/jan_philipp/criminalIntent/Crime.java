@@ -35,7 +35,7 @@ public class Crime {
         mId = UUID.fromString(json.getString(JSON_ID));
         if (json.has(JSON_TITLE)){
             mTitle = json.getString(JSON_TITLE);
-        }
+            }
         mSolved = json.getBoolean(JSON_SOLVED);
         mDate = new Date(json.getLong(JSON_DATE));
         if (json.has(JSON_PHOTO))
@@ -52,16 +52,16 @@ public class Crime {
         return mTitle;
     }
 
-    public void setTitle(String Title) {
-        this.mTitle = Title;
-    }
-
     public Date getmDate() {
         return mDate;
     }
 
     public void setmDate(Date mDate) {
         this.mDate = mDate;
+    }
+
+    public void setTitle(String Title) {
+        this.mTitle = Title;
     }
 
     public boolean ismSolved() {
